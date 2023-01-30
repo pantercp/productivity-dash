@@ -18,18 +18,30 @@
     margin: 1rem;
     padding: 1rem;
     border: 1px solid black;
+    border-radius: 0.5rem;
 }
 .dash-top{
-    margin: 0.5rem 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .dash-top button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.25rem;
 }
 .dashboard h2{
     display: inline-block;
+}
+
+/* ---------Form---------- */
+
+.container-form{
+    height: 0;
+    overflow: hidden;
+}
+.container-form.open{
+    height: 100%;
 }
 
 /* ---------Objectives--------- */
@@ -40,10 +52,13 @@
     margin: 0.5rem 0;
 }
 .dashboard span{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     background-color: aqua;
     border-radius: 0.5rem;
-    padding: 0 0.5rem;
+    padding: 0.1rem 0.5rem;
+}
+.task-drop{
+    margin: 0 0.5rem;
 }
 
 /* ---------Tasks Section--------- */
@@ -62,3 +77,6 @@
 .dash-tasks.open{
     height: 100%;
 }
+
+
+

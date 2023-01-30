@@ -1,3 +1,12 @@
+// -------Toggle Objectives Form
+
+const formToggle = document.querySelector(".form-toggle")
+const formContent = document.querySelector(".container-form")
+
+formToggle.addEventListener("click", () => {
+    formContent.classList.toggle("open")
+});
+
 // -------Toggle Objectives Tasks
 
 const tasksBtns = document.querySelectorAll(".task-drop");
@@ -13,7 +22,6 @@ for(let tasksBtn of tasksBtns) {
 // --------Check Off Task
 
 const inputs = document.querySelectorAll("input")
-const bingo = document.querySelector("input")
 
 for(let input of inputs) {
         input.addEventListener("click", () => {
