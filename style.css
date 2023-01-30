@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0.5rem;
+}
+
+.header img{
+    max-height: 40px;
+}
+
+.dashboard{
+    position: relative;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.dash-top button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+}
+.dashboard h2,h4{
+    display: inline-block;
+}
+
+.dashboard span{
+    font-size: 0.8rem;
+    background-color: aqua;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.dash-tasks{
+    height: 0;
+    overflow: hidden;
+}
+.dash-tasks.open{
+    height: 100%;
+}
