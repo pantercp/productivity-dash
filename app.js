@@ -1,26 +1,28 @@
 // -------Toggle Objectives Tasks
 
-const tasksBtn = document.querySelector("#task");
-const tasksList = document.querySelector(".dash-tasks");
+const tasksBtns = document.querySelectorAll(".task-drop");
 
-tasksBtn.addEventListener("click", () => {
-    tasksList.classList.toggle("open")
-});
+for(let tasksBtn of tasksBtns) {
+    tasksBtn.addEventListener("click", () => {
+        tasksBtn.parentElement.lastElementChild
+        .classList.toggle("open")
+    })
+};
+
 
 // --------Check Off Task
 
-const checkBtn = document.querySelector("#check");
-const taskItem = document.querySelector(".task-item");
-let taskComplete = false
+const inputs = document.querySelectorAll("input")
+const bingo = document.querySelector("input")
 
-checkBtn.addEventListener("click", () => {
-    if (!taskComplete) {
-    taskItem.style.textDecoration = "line-through"
-    taskComplete = true;
-    } else {
-    taskItem.style.textDecoration = ""
-    taskComplete = false
-    }
-})
-
-// text-decoration: line-through;
+for(let input of inputs) {
+        input.addEventListener("click", () => {
+            if(!input.checked) {
+                console.log("Do It")
+                input.nextElementSibling.style.textDecoration = ""
+            } else {
+                console.log("Completed")
+                input.nextElementSibling.style.textDecoration = "line-through"
+            }
+        })
+    };
