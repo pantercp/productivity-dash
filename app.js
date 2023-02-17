@@ -14,18 +14,26 @@ const form = document.querySelector(".obj-form");
 form.addEventListener("submit", function(e){
     e.preventDefault();
     const objective = document.querySelector(".objective");
-    const objList = document.querySelector(".container");
+    const objList = document.querySelector(".container"); // For appending HTMl
+    const deadlineObj = document.querySelector(".deadline");
+    const today = new Date();
+    const deadline = new Date(deadlineObj.value);
+    const msPerDay = 24 * 60 * 60 * 1000; // Number of milliseconds per day
+    let countdown = (deadline.getTime() - today.getTime()) / msPerDay;
+    countdown = Math.round(countdown); //returns days left to deadline
+    console.log(countdown)
 // -----Insert html template for objectives list
     objList.insertAdjacentHTML("beforeend",`
-    <button>Toggle</button>
+    <button class="task-drop">Toggle</button>
     <h4>${objective.value}</h4>
-    <span>4 Days Left</span>
+    <span>${countdown} Days Left</span>
     <div class="dash-tasks"></div>
     `);
     console.log(objective.value);
-    objective.value = "";
+    objective.value = ""; // Reset Input
 });
 
+// const countdown = deadline.value - today
 
 
 // -------Toggle Objectives Tasks
@@ -42,7 +50,7 @@ for(let tasksBtn of tasksBtns) {
 
 // --------Check Off Task
 
-const inputs = document.querySelectorAll("input")
+const inputs = document.querySelectorAll(".checkbox")
 
 for(let input of inputs) {
         input.addEventListener("click", () => {
