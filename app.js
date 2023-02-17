@@ -1,4 +1,4 @@
-// -------Toggle Objectives Form
+// -------View Objectives Form
 
 const formToggle = document.querySelector(".form-toggle")
 const formContent = document.querySelector(".container-form")
@@ -6,6 +6,27 @@ const formContent = document.querySelector(".container-form")
 formToggle.addEventListener("click", () => {
     formContent.classList.toggle("open")
 });
+
+// -------Add New Objective
+
+const form = document.querySelector(".obj-form");
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const objective = document.querySelector(".objective");
+    const objList = document.querySelector(".container");
+// -----Insert html template for objectives list
+    objList.insertAdjacentHTML("beforeend",`
+    <button>Toggle</button>
+    <h4>${objective.value}</h4>
+    <span>4 Days Left</span>
+    <div class="dash-tasks"></div>
+    `);
+    console.log(objective.value);
+    objective.value = "";
+});
+
+
 
 // -------Toggle Objectives Tasks
 
