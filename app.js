@@ -24,7 +24,7 @@ form.addEventListener("submit", function(e){
     console.log(countdown)
 // -----Insert html template for objectives list
     objList.insertAdjacentHTML("beforeend",`
-    <button class="task-drop">Toggle</button>
+    <button class="task-drop">Tasks</button>
     <h4>${objective.value}</h4>
     <span>${countdown} Days Left</span>
     <div class="dash-tasks"></div>
@@ -33,8 +33,16 @@ form.addEventListener("submit", function(e){
     objective.value = ""; // Reset Input
 });
 
-// const countdown = deadline.value - today
+// -------Complete Objective/Update Milestone
 
+const doneObjBtns = document.querySelectorAll(".complete-obj");
+
+for(let doneObjBtn of doneObjBtns){
+    doneObjBtn.addEventListener("click", () => {
+        doneObjBtn.classList.toggle("done");
+        console.log("finito");
+    })
+}
 
 // -------Toggle Objectives Tasks
 
